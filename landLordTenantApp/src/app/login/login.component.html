@@ -1,3 +1,16 @@
-<p>
-  login works!
-</p>
+<div class="container">
+  <h2 class="P-2">LOGIN</h2>
+  <form class="m-2">
+    <div class="form-group">
+      <label for="">Username</label>
+      <input type="text" [formControl]="user" class="form-control" id="username">
+    </div>
+
+    <div class="form-group">
+        <label for="">Password</label>
+        <input type="password" [formControl]="password" class="form-control" id="password">
+      </div>
+
+      <button class="btn btn-primary" (click)="login(user, password)">SUBMIT</button>
+  </form>
+</div>
