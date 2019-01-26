@@ -18,6 +18,7 @@ import { ReportIncidentComponent } from './report-incident/report-incident.compo
 const appRoutes: Routes = [
   { path: 'landing-page', component: LandingComponent },
   { path: 'register', component: SignupComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'make-payment', component: MakePaymentComponent },
   { path: 'dashboard', component: DashboardComponent, children: [
     { path: 'payment-history', component: PaymentHistoryComponent},
@@ -25,7 +26,12 @@ const appRoutes: Routes = [
     { path: 'incidents', component: IncidentsComponent, children: [
       { path: 'report-incidentt', component: ReportIncidentComponent }
     ] }
-  ]}
+  ]},
+  { path: '',
+    redirectTo: '/landing-page',
+    pathMatch: 'full'
+  },
+  { path: '**', component: LandingComponent }
 ]
 
 @NgModule({
