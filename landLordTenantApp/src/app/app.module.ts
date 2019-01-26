@@ -10,16 +10,21 @@ import { SignupComponent } from './signup/signup.component';
 import { PaymentHistoryComponent } from './payment-history/payment-history.component';
 import { AssetsComponent } from './assets/assets.component';
 import { IncidentsComponent } from './incidents/incidents.component';
+import { MakePaymentComponent } from './make-payment/make-payment.component';
+import { ReportIncidentComponent } from './report-incident/report-incident.component';
 
 
 //route definitions 
 const appRoutes: Routes = [
   { path: 'landing-page', component: LandingComponent },
   { path: 'register', component: SignupComponent },
+  { path: 'make-payment', component: MakePaymentComponent },
   { path: 'dashboard', component: DashboardComponent, children: [
-    { path: 'payment-history', component: PaymentHistoryComponent },
+    { path: 'payment-history', component: PaymentHistoryComponent},
     { path: 'assets', component: AssetsComponent },
-    { path: 'incidents', component: IncidentsComponent }
+    { path: 'incidents', component: IncidentsComponent, children: [
+      { path: 'report-incidentt', component: ReportIncidentComponent }
+    ] }
   ]}
 ]
 
@@ -32,7 +37,9 @@ const appRoutes: Routes = [
     SignupComponent,
     PaymentHistoryComponent,
     AssetsComponent,
-    IncidentsComponent
+    IncidentsComponent,
+    MakePaymentComponent,
+    ReportIncidentComponent
   ],
   imports: [
     BrowserModule,
