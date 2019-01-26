@@ -62,7 +62,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFirestoreModule
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
